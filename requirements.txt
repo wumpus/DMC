@@ -1,9 +1,9 @@
-# pyenv clue: PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install --force 3.N.N  # extra option needed by theano
+# pyenv clue: PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install --force 3.X.Y  # extra option needed by theano
 
-# not working: "yum install nfft-devel"  # lacks nfft3_threads.so -- 
+# not working: "yum install nfft-devel"  # lacks nfft3_threads.so -- https://bugzilla.redhat.com/show_bug.cgi?id=1823872
 # works: "apt-get install libnfft3-dev"  # needed by pynfft ... eht-imaging
 
-Cython  # needed by pynfft -- but needs to be installed *before* nfft and not *with* it
+Cython  # needed by pynfft -- but needs to be installed *before* pynfft and not *with* it
 #pynfft  # optional for eht-imaging  # fails with modern nfft because of an interface update -- https://github.com/pyNFFT/pyNFFT/pull/58 not in pypi yet
 git+https://github.com/pyNFFT/pyNFFT.git  # has the fix
 
